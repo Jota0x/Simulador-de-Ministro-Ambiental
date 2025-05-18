@@ -30,6 +30,8 @@ Tomar decisões ao longo de 5 anos de mandato, lidando com diferentes cenários 
 
 Desenvolvido por João Pedro Campos.
 
+Este projeto foi desenvolvido como parte de um trabalho acadêmico, com o objetivo de exercitar lógica, interação de dados e apresentação visual com HTML, CSS e JavaScript.
+
 Se quiser me encontrar:
 
 [![GitHub](https://img.shields.io/badge/GitHub-Jota0x-blue?style=flat&logo=github)](https://github.com/Jota0x)  
