@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simulador de Ministro Ambiental</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="simulador-container">
+        <div class="cabecalho">
+            <h1>Ministério do Meio Ambiente</h1>
+            <p>Tome decisões estratégicas para equilibrar desenvolvimento e sustentabilidade</p>
+        </div>
+
+        <div class="painel-status">
+            <div class="status-item">
+                <small>Aprovação Pública</small>
+                <span id="clima">50</span>
+            </div>
+            <div class="status-item">
+                <small>Economia</small>
+                <span id="economia">50</span>
+            </div>
+            <div class="status-item">
+                <small>Mandato</small>
+                <span id="tempo">5</span> anos
+            </div>
+        </div>
+
+        <div class="painel-principal">
+            <div class="painel-decisao" id="painel-decisao">
+                
+            </div>
+
+            <div class="painel-auxiliar">
+                <div class="grafico-container">
+                    <h4>Evolução do Mandato</h4>
+                    <canvas id="grafico-evolucao"></canvas>
+                </div>
+
+                <div class="conselheiros" id="conselheiros-painel">
+                    <h4 style="color: var(--verde-escuro); margin-bottom: 15px;">Conselheiros</h4>
+                    
+                </div>
+
+                <div id="evento-aleatorio-painel" style="display: none;">
+                    
+                </div>
+            </div>
+        </div>
+
+        <div class="resultado-final" id="resultado-final" style="display: none;"></div>
+    </div>
+
+    <script src="js/main.js"></script>
+    <script src="js/cenarios.js"></script>
+    <script src="js/conselheiros.js"></script>
+    <script src="js/grafico.js"></script>
+</body>
+</html>

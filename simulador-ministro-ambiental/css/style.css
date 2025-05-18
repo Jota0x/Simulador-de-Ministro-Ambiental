@@ -1,0 +1,397 @@
+:root {
+    --verde-escuro: #1a3e2e;
+    --verde-medio: #2d6a4f;
+    --verde-claro: #52b788;
+    --dourado: #d4a017;
+    --vermelho: #d00000;
+    --azul: #3a86ff;
+    --branco: #f8f9fa;
+    --cinza-escuro: #343a40;
+    --sombra: 0 4px 20px rgba(0, 0, 0, 0.15);
+    --transicao: all 0.4s ease-in-out;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Merriweather', serif;
+}
+
+body {
+    background: url('https://images.unsplash.com/photo-1619566636858-adf3ef46400b?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80') no-repeat center center fixed;
+    background-size: cover;
+    color: var(--cinza-escuro);
+    line-height: 1.7;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    position: relative;
+}
+
+body::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    z-index: 0;
+}
+
+.simulador-container {
+    position: relative;
+    width: 100%;
+    max-width: 900px;
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 10px;
+    box-shadow: var(--sombra);
+    overflow: hidden;
+    z-index: 1;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.cabecalho {
+    background: linear-gradient(135deg, var(--verde-escuro), var(--verde-medio));
+    color: white;
+    padding: 25px;
+    text-align: center;
+    border-bottom: 4px solid var(--dourado);
+}
+
+.cabecalho h1 {
+    font-size: 2.3rem;
+    margin-bottom: 10px;
+    letter-spacing: 1px;
+}
+
+.cabecalho p {
+    font-style: italic;
+    opacity: 0.9;
+}
+
+.painel-status {
+    display: flex;
+    justify-content: space-between;
+    background: var(--verde-escuro);
+    color: white;
+    padding: 15px 25px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.status-item {
+    text-align: center;
+    min-width: 100px;
+}
+
+.status-item span {
+    display: block;
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: white;
+}
+
+.painel-principal {
+    display: flex;
+    min-height: 400px;
+}
+
+.painel-decisao {
+    flex: 2;
+    padding: 25px;
+    background: url('https://www.transparenttextures.com/patterns/soft-wallpaper.png');
+}
+
+.painel-auxiliar {
+    flex: 1;
+    padding: 20px;
+    background: rgba(0, 0, 0, 0.03);
+    border-left: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.cenario {
+    background: white;
+    padding: 25px;
+    border-radius: 8px;
+    margin-bottom: 30px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
+    border-left: 5px solid var(--verde-medio);
+}
+
+.cenario h2 {
+    color: var(--verde-escuro);
+    margin-bottom: 15px;
+    font-size: 1.5rem;
+    display: flex;
+    align-items: center;
+}
+
+.cenario h2::before {
+    content: '📌';
+    margin-right: 10px;
+}
+
+.cenario p {
+    margin-bottom: 20px;
+    font-size: 1.1rem;
+}
+
+.opcoes {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 15px;
+}
+
+.opcao {
+    background: white;
+    border: 2px solid var(--verde-claro);
+    border-radius: 8px;
+    padding: 20px;
+    cursor: pointer;
+    transition: var(--transicao);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+    position: relative;
+}
+
+.opcao:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+}
+
+.opcao-positivo {
+    border-color: var(--verde-claro);
+}
+
+.opcao-positivo:hover {
+    border-color: var(--verde-medio);
+}
+
+.opcao-negativo {
+    border-color: #ffb7b7;
+}
+
+.opcao-negativo:hover {
+    border-color: var(--vermelho);
+}
+
+.opcao h3 {
+    color: var(--verde-escuro);
+    margin-bottom: 10px;
+    font-size: 1.2rem;
+    display: flex;
+    align-items: center;
+}
+
+.opcao-positivo h3::before {
+    content: '🌱';
+    margin-right: 8px;
+}
+
+.opcao-negativo h3::before {
+    content: '⚠️';
+    margin-right: 8px;
+}
+
+.opcao p {
+    font-size: 0.95rem;
+    color: var(--cinza-escuro);
+    margin-bottom: 15px;
+}
+
+.impacto {
+    display: inline-block;
+    padding: 5px 10px;
+    border-radius: 4px;
+    font-weight: bold;
+    font-size: 0.9rem;
+    margin-right: 8px;
+}
+
+.impacto-clima {
+    background-color: rgba(45, 106, 79, 0.1);
+    color: var(--verde-escuro);
+    border: 1px dashed var(--verde-medio);
+}
+
+.impacto-economia {
+    background-color: rgba(212, 160, 23, 0.1);
+    color: #8a6d0b;
+    border: 1px dashed var(--dourado);
+}
+
+.conselheiros {
+    margin-top: 30px;
+}
+
+.conselheiro {
+    background: white;
+    padding: 15px;
+    border-radius: 8px;
+    margin-bottom: 15px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+    border-left: 3px solid var(--azul);
+}
+
+.conselheiro-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 8px;
+}
+
+.conselheiro-avatar {
+    font-size: 24px;
+    margin-right: 10px;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(0,0,0,0.05);
+    border-radius: 50%;
+}
+
+.conselheiro-info {
+    flex: 1;
+}
+
+.conselheiro h4 {
+    color: var(--azul);
+    display: flex;
+    justify-content: space-between;
+}
+
+.conselheiro-cargo {
+    font-size: 0.8rem;
+    color: var(--cinza-escuro);
+    font-style: italic;
+}
+
+.conselheiro-tendencia {
+    font-size: 0.7rem;
+    padding: 2px 8px;
+    border-radius: 10px;
+    margin-left: 8px;
+}
+
+.tendencia-ambientalista {
+    background: var(--verde-medio);
+    color: white;
+}
+
+.tendencia-economia {
+    background: var(--dourado);
+    color: var(--cinza-escuro);
+}
+
+.tendencia-equilibrio {
+    background: var(--azul);
+    color: white;
+}
+
+.conselheiro p {
+    font-size: 0.9rem;
+    font-style: italic;
+    padding-left: 50px;
+}
+
+.grafico-container {
+    margin-top: 20px;
+    background: white;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+}
+
+.grafico-container h4 {
+    color: var(--verde-escuro);
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.evento-aleatorio {
+    background: rgba(208, 0, 0, 0.1);
+    padding: 15px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    border-left: 3px solid var(--vermelho);
+    animation: pulse 2s infinite;
+}
+
+.evento-aleatorio h4 {
+    color: var(--vermelho);
+    margin-bottom: 8px;
+    display: flex;
+    align-items: center;
+}
+
+.evento-aleatorio h4::before {
+    content: '🚨';
+    margin-right: 8px;
+}
+
+.evento-aleatorio p {
+    font-size: 0.9rem;
+}
+
+.resultado-final {
+    padding: 40px;
+    text-align: center;
+    animation: fadeIn 0.8s ease-out;
+}
+
+.resultado-final h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: var(--verde-escuro);
+}
+
+.resultado-final p {
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+}
+
+.botao-reiniciar {
+    background: linear-gradient(to right, var(--verde-medio), var(--verde-escuro));
+    color: white;
+    border: none;
+    padding: 12px 30px;
+    border-radius: 50px;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: var(--transicao);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.botao-reiniciar:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.02); }
+    100% { transform: scale(1); }
+}
+
+@media (max-width: 768px) {
+    .painel-principal {
+        flex-direction: column;
+    }
+    
+    .painel-auxiliar {
+        border-left: none;
+        border-top: 1px solid rgba(0, 0, 0, 0.1);
+    }
+    
+    .cabecalho h1 {
+        font-size: 1.8rem;
+    }
+}
